@@ -21,7 +21,7 @@ echo "Set up SSH Keys."
 echo "Now updating & upgrading system."
 echo "In the meantime, confirm that SSH Authentication works in a separate shell."
 
-apt-get update && \
+apt-get update -y -qq && \
     apt-get dist-upgrade && \
     apt-get install \
         git \
@@ -40,7 +40,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && 
         $(lsb_release -cs) \
         stable"
 
-apt-get update && \
+apt-get update -y -qq && \
     apt-get install \
         docker-ce \
         docker-ce-cli \
